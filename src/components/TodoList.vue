@@ -8,7 +8,7 @@
       contenteditable="true"
     >
       <input type="checkbox" @click="toggleTodo(todo.id)">
-      <span v-once> {{ todo.task }} </span>
+      <span v-once class="width"> {{ todo.task }} </span>
       <span class="delete" @click="deleteTodo(todo.id)">ⓧ</span>
     </li>
   </ul>
@@ -55,10 +55,16 @@ export default {
   text-decoration: line-through;
   color: #41b883;
 }
-
+.width {
+  width: 90%;
+  position: relative;
+  display: inline-block;
+}
+button{
+  margin: 10px 0;
+}
 .delete {
-  display: block;
-  float: right;
+  display: inline-block;
   color: #d22;
   width: 1.25rem;
   height: 1.25rem;
